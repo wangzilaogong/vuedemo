@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+  <h1 v-text="title"></h1>
   </div>
 </template>
 
@@ -9,9 +8,10 @@
 import Hello from './components/Hello'
 
 export default {
-  name: 'app',
-  components: {
-    Hello
+   data () {
+    return {
+      title: 'This is a todo list'
+    }
   }
 }
 </script>
