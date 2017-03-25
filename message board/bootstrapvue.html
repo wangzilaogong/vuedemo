@@ -24,6 +24,12 @@
                         })
                         this.username='';
                         this.age='';
+                    },
+                    dele: function (n) {
+                            this.mydata.splice(n,1)
+                    },
+                    deleall: function (n) {
+                        this.mydata=[];
                     }
 
                 }
@@ -68,11 +74,11 @@
             <td>{{item.name}}</td>
             <td>{{item.age}}</td>
             <td class="text-center">
-                <button class="btn btn-danger" data-toggle="modal" data-target="#layer">删除</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#layer" @click="nowIndex=$indexw">删除</button>
             </td>
         </tr>
         <tr v-show="mydata.length>1">
-            <td colspan="4" class="text-right"><button class="btn btn-danger">删除全部</button></td>
+            <td colspan="4" class="text-right"><button class="btn btn-danger" data-target="#layer2" data-toggle="modal">删除全部</button></td>
         </tr>
         <tr>
             <td colspan="4" class="text-center text-muted" v-show="mydata.length==0">
@@ -90,8 +96,8 @@
                 </div>
 
                 <div class="modal-body text-right">
-                    <button data-dismiss="modal" class="btn btn-primary">取消</button>
-                    <button data-dismiss="modal" class="btn btn-danger">确认</button>
+                    <button data-dismiss="modal" class="btn btn-primary" >取消</button>
+                    <button data-dismiss="modal" class="btn btn-danger" @click="dele(nowIndex)">确认</button>
                 </div>
             </div>
 
@@ -100,7 +106,25 @@
 
 
     </div>
+    <div role="dialog" class="modal fade small" id="layer2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">确认全部删除吗？</h4>
+                </div>
 
+                <div class="modal-body text-right">
+                    <button data-dismiss="modal" class="btn btn-primary" >取消</button>
+                    <button data-dismiss="modal" class="btn btn-danger" @click="deleall()">确认</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
 </div>
 
 </body>
