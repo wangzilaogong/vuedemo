@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件3</title>
+    <script src="js/vue.min.js" type="application/javascript"></script>
+</head>
+<body>
+        <my-component></my-component>
+
+    <script>
+        Vue.component('my-component', {
+            template: '<span>{{ message }}</span>',
+            data: {
+                message: 'hello'
+            }
+        });
+        new  Vue({
+            el:"###",
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html>
