@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>局部注册</title>
+    <script src="./vue.min.js"></script>
+
+   
+
+</head>
+
+<body>
+    <div id = "example">
+            <my-component></my-component>
+
+            <my-component2></my-component2>
+            
+
+    </div>
+
+<script>
+    var Child = {
+        template:'<div>A CUSTOM COMPONENT~</div>',
+       // template2:'<div>A CUSTOM COMPONENT2~</div>'
+    }
+
+    var app = new Vue({
+        el:'#example',
+        components:{
+        'my-component':Child,
+//'my-component2':Child.template2,
+        }
+    })
+</script>
+</body>
+</html>

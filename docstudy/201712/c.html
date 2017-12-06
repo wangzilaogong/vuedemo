@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组合组件</title>
+    <script src="./vue.min.js"></script>    
+</head>
+<body>
+    <div id="sim">
+            <child message="sssssssdds"></child>       
+    </div>
+<script>
+    Vue.component('child',{
+        props:['message'],
+        template:'<span>{{message}}</span>'
+    })
+
+    new Vue({
+        el:'#sim'
+    })
+
+    
+</script>
+    
+</body>
+</html>
